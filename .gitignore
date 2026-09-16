@@ -1,0 +1,5 @@
+*.txt
+*.sum
+.vscode
+*.json
+*.exe
