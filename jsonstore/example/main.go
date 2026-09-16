@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"log"
 
-	"jsonstore"
+	"github.com/bomkz/cloudserver/jsonstore"
 )
 
 type Profile struct {

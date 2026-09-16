@@ -28,7 +28,7 @@ func handleRequest(c *gin.Context) {
 		c.AbortWithStatus(400)
 		return
 	}
-	for _, handler := range handlers {
+	for _, handler := range Handlers {
 		if handler.Req == req.Req {
 			handler.Handler(body, c)
 			return

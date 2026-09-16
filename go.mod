@@ -2,15 +2,16 @@ module github.com/bomkz/cloudserver
 
 go 1.27.0
 
+require github.com/gin-gonic/gin v1.12.0
+
 require (
-	github.com/bomkz/cloudsync v0.0.0-20260909074151-b1a2c9ccc8e9
+	github.com/bomkz/cloudsync v0.0.0-20260916063128-71385719f0b0
 	github.com/bytedance/gopkg v0.1.3 // indirect
 	github.com/bytedance/sonic v1.15.0 // indirect
 	github.com/bytedance/sonic/loader v0.5.0 // indirect
 	github.com/cloudwego/base64x v0.1.6 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.12 // indirect
 	github.com/gin-contrib/sse v1.1.0 // indirect
-	github.com/gin-gonic/gin v1.12.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.30.1 // indirect

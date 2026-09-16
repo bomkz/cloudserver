@@ -6,9 +6,9 @@ type request struct {
 	Req string `json:"req"`
 }
 
-type reqHandlers struct {
+type ReqHandlers struct {
 	Req     string
 	Handler func([]byte, *gin.Context)
 }
 
-var handlers []reqHandlers
+var Handlers []ReqHandlers
