@@ -3,7 +3,6 @@ package cloudstore
 import (
 	"encoding/json"
 	"fmt"
-	"os"
 	"time"
 
 	"github.com/bomkz/cloudserver/auth"
@@ -21,7 +20,7 @@ func InitCloudserver() {
 }
 
 func updatePilotHandler(requestByte []byte, c *gin.Context) {
-	request := updatePilotRequestStruct{}
+	request := pilots.UpdatePilotRequestStruct{}
 
 	err := json.Unmarshal(requestByte, &request)
 	if err != nil {
@@ -76,7 +75,7 @@ func updatePilotHandler(requestByte []byte, c *gin.Context) {
 }
 
 func updatePilot(uuid string, pilotData []byte, name string) error {
-	pilotDir, err := jsonstore.New("./" + uuid + "/" + name)
+	pilotDir, err := jsonstore.New("./data/" + uuid + "/" + name)
 
 	if err != nil {
 		return err
@@ -93,12 +92,5 @@ func updatePilot(uuid string, pilotData []byte, name string) error {
 		return err
 	}
 
-	return nil
-}
-
-func ensurePilotExists(name, uid string) error {
-	if _, err := os.Stat("./" + uid + "/ " + name); os.IsNotExist(err) {
-		os.Mkdir("./"+uid+"/"+name, 0755)
-	}
 	return nil
 }

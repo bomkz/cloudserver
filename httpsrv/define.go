@@ -3,7 +3,7 @@ package httpsrv
 import "github.com/gin-gonic/gin"
 
 type request struct {
-	Req string `json:"req"`
+	Req string `json:"request"`
 }
 
 type ReqHandlers struct {
@@ -12,3 +12,13 @@ type ReqHandlers struct {
 }
 
 var Handlers []ReqHandlers
+
+type ResponseStruct struct {
+	Request string             `json:"request"`
+	Body    ResponseBodyStruct `json:"body"`
+}
+
+type ResponseBodyStruct struct {
+	TypeResp string `json:"type"`
+	Content  string `json:"content"`
+}

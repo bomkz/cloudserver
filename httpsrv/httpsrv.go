@@ -2,7 +2,9 @@ package httpsrv
 
 import (
 	"bytes"
+	"fmt"
 	"io"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,7 +13,7 @@ func Start() {
 
 	r := gin.Default()
 	r.POST("/v1", handleRequest)
-	r.Run(":8080")
+	r.Run(":9999")
 }
 
 func handleRequest(c *gin.Context) {
@@ -34,5 +36,11 @@ func handleRequest(c *gin.Context) {
 			return
 		}
 	}
-	c.AbortWithStatus(404)
+
+	resp := ResponseStruct{}
+
+	resp.Request = "response"
+	resp.Body.TypeResp = "error"
+	resp.Body.Content = fmt.Sprint(time.Now().Unix()) + "Requested type does not exist: " + req.Req
+	c.JSON(404, resp)
 }
