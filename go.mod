@@ -2,10 +2,12 @@ module github.com/bomkz/cloudserver
 
 go 1.27.0
 
-require github.com/gin-gonic/gin v1.12.0
-
 require (
 	github.com/bomkz/cloudsync v0.0.0-20260916063128-71385719f0b0
+	github.com/gin-gonic/gin v1.12.0
+)
+
+require (
 	github.com/bytedance/gopkg v0.1.3 // indirect
 	github.com/bytedance/sonic v1.15.0 // indirect
 	github.com/bytedance/sonic/loader v0.5.0 // indirect
