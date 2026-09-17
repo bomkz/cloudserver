@@ -1,4 +1,4 @@
-package auth
+package srvauth
 
 import (
 	"encoding/json"

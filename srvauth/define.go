@@ -1,4 +1,4 @@
-package auth
+package srvauth
 
 type DiscordUser struct {
 	ID            string  `json:"id"`
