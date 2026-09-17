@@ -3,11 +3,11 @@ package cloudstore
 import (
 	"os"
 
-	"github.com/bomkz/cloudserver/auth"
+	"github.com/bomkz/cloudserver/srvauth"
 )
 
 func ensureUserExists(token string) error {
-	uid, err := auth.CheckAuth(token)
+	uid, err := srvauth.CheckAuth(token)
 	if err != nil {
 		return err
 	}
