@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/bomkz/cloudserver/auth"
 	"github.com/bomkz/cloudserver/httpsrv"
 	"github.com/bomkz/cloudserver/jsonstore"
+	"github.com/bomkz/cloudserver/srvauth"
 	"github.com/bomkz/cloudsync/pilots"
 	"github.com/gin-gonic/gin"
 )
@@ -33,7 +33,7 @@ func updatePilotHandler(requestByte []byte, c *gin.Context) {
 		return
 	}
 
-	uuid, err := auth.CheckAuth(request.Body.Token)
+	uuid, err := srvauth.CheckAuth(request.Body.Token)
 	if err != nil {
 		resp := ResponseStruct{}
 
