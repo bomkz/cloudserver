@@ -1,11 +1,6 @@
 package cloudstore
 
-type ResponseStruct struct {
-	Request string             `json:"request"`
-	Body    ResponseBodyStruct `json:"body"`
-}
-
-type ResponseBodyStruct struct {
-	TypeResp string `json:"type"`
-	Content  string `json:"content"`
-}
+var userStore = dataStore + "%s/"
+var dataStore = "./data/"
+var pilotPrefix = "PILOT_"
+var configPrefix = "CONFIG_"
